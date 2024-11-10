@@ -1,0 +1,104 @@
+body {
+  background: linear-gradient(
+    166deg,
+    rgba(194, 216, 222, 0.65),
+    rgb(249, 251, 255),
+    rgba(87, 73, 190, 0.57)
+  );
+  justify-content: center;
+  min-width: 195vh;
+}
+img {
+  height: 5rem;
+  margin: 1.3rem 1.4rem 0.7rem 1.4rem;
+  transform: rotateZ(6deg);
+}
+nav {
+  position: fixed;
+  display: flex;
+  width: 100%;
+  text-indent: 0.2rem;
+  height: 6rem;
+  top: 0;
+}
+nav h3 {
+  font-size: 2rem;
+  font-weight: 500;
+  color: #0009f2;
+  transform: translate(-1rem);
+}
+.content {
+  margin: 4rem 0 0 5rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 0rem;
+  grid-row-gap: 0rem;
+  width: 74rem;
+  height: 30rem;
+}
+.content .box1 {
+  grid-area: 1/1/2/2;
+}
+.content .box1 h1 {
+  font-size: 2.6rem;
+  font-weight: 450;
+  color: #956fde;
+  text-shadow: 1px 1px 4px rgba(88, 47, 144, 0.22);
+  margin: 7rem 1rem 5rem 1rem;
+}
+.content .box1 p {
+  font-size: 1.05rem;
+  color: #285e65;
+  font-weight: 500;
+}
+.content .box1 button {
+  width: 8rem;
+  height: 3.4rem;
+  margin: 2rem 4rem;
+  border-radius: 1.5rem;
+  border: none;
+  background: #b01fdb;
+  box-shadow: 3px 6px 3px rgba(149, 93, 93, 0.37);
+}
+.content .box1 button a {
+  text-decoration: none;
+  color: #8be3e3;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.content .box1 button:active {
+  box-shadow: none;
+}
+.content .box2 {
+  grid-area: 1/2/2/3;
+  padding-left: 1rem;
+}
+.content .box2 .relax,
+.content .box2 .calming,
+.content .box2 .fun,
+.content .box2 .simple {
+  margin: 2rem;
+  height: 11rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  display: inline-block;
+  text-align: center;
+  line-height: 11rem;
+  font-size: 1.9rem;
+  color: aliceblue;
+  font-style: oblique;
+  box-shadow: 0.25rem 0.25rem 0.25rem #a35e5e;
+}
+.content .box2 .relax {
+  background: linear-gradient(60deg, #9107f7, #6fcfe0);
+}
+.content .box2 .calming {
+  background: linear-gradient(300deg, #c6c6db, #e25910, #ea2616);
+}
+.content .box2 .fun {
+  background: linear-gradient(2400deg, #34a8b7, #86ea11);
+}
+.content .box2 .simple {
+  background: linear-gradient(80deg, #d08c8c, #ed0e0e);
+}

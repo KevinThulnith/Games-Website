@@ -1,0 +1,23 @@
+{% extends "main/main.html" %}
+{% load static %}
+{% block links %}
+  <link rel="stylesheet" href="{% static '/css/form-base.css' %}" />
+  {% if mode == 1 %}
+    <link rel="stylesheet" href="{% static '/css/form-userinfo.css' %}" />
+  {% elif mode == 2 %}
+    <link rel="stylesheet" href="{% static '/css/form-eup.css' %}" />
+  {% else %}
+    <link rel="stylesheet" href="{% static '/css/form-varification.css' %}" />
+  {% endif %} 
+{% endblock links %}
+{% block content %}
+  <div class="status">
+    <div class="one">1</div>
+    <div class="two">2</div>
+    <div class="three">3</div>
+  </div>
+  <form acton="/singin/" method="post">
+    {% csrf_token %}
+    {% block form %} {% endblock form %}
+  </form>
+{% endblock content %}

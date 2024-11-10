@@ -1,0 +1,99 @@
+{% extends 'main/form-base.html' %}
+{% load static %}
+{% block form %}
+  <h1>Log in Info</h1>
+  <input type="text" value="{{val1}}" style="display: none" name="value2" />
+  <input
+    type="text"
+    value="{{val5}}"
+    style="display: none"
+    name="value1"
+    id="status"
+  />
+  <div class="input">
+    <input
+      type="text"
+      name="uname"
+      id="uname"
+      placeholder="  "
+      pattern="[A-Za-z\0-9\@\_\$\%]{8,20}"
+      title="Username must contain 8 or more characters"
+      value="{{val2}}"
+      required
+    />
+    <label for="uname">Username</label>
+    <span class="hide" id="unamelbl">Invalide Username</span>
+  </div>
+  <div class="input">
+    <input
+      type="email"
+      name="email"
+      id="email"
+      placeholder="  "
+      value="{{val3}}"
+      required
+    />
+    <label for="email">Email</label>
+    <span class="hide" id="emaillbl">Invalide Email</span>
+  </div>
+  <div class="input">
+    <input
+      placeholder=" "
+      type="password"
+      name="pas1"
+      id="pas1"
+      pattern="[A-Za-z\0-9\@\_\$\%]{8,20}"
+      title="Password must contain 8 or more characters"
+      value="{{val4}}"
+      required
+    />
+    <label for="pas1">Password</label>
+    <button id="bt1" type="button">
+      <img src=" {% static '/graphics/eye-solid.svg' %} " />
+      <img src=" {% static '/graphics/eye-low-vision-solid.svg' %} " />
+    </button>
+  </div>
+  <div class="input">
+    <input
+      placeholder=" "
+      type="password"
+      name="pas2"
+      id="pas2"
+      value="{{val4}}"
+      required
+    />
+    <label for="pas2">Confirm Password</label>
+    <button id="bt2" type="button">
+      <img src=" {% static '/graphics/eye-solid.svg' %} " />
+      <img src=" {% static '/graphics/eye-low-vision-solid.svg' %} " />
+    </button>
+    <span class="hide" id="banr">Wrong Password</span>
+  </div>
+  <button type="submit" id="ok">Submit</button>
+  <button type="reset">Cancel</button>
+  <script>
+    let stat = document.getElementById("status");
+    let unameinpt = document.getElementById("uname");
+    let unamelbl = document.getElementById("unamelbl");
+    let emailinpt = document.getElementById("email");
+    let eamillbl = document.getElementById("emaillbl");
+    if (stat.value.length) {
+      if (eval(stat.value) == 1) {
+        spanHide(unameinpt, unamelbl);
+      } else {
+        spanHide(emailinpt, eamillbl);
+      }
+    }
+    function spanHide(inpt, spn) {
+      spn.classList.remove("hide");
+      let ys = 0;
+      inpt.addEventListener("input", () => {
+        ys++;
+        if (ys > 2) {
+          spn.classList.add("hide");
+        }
+      });
+    }
+  </script>
+  <script src=" {% static '/js/chkpass.js' %} "></script>
+{% endblock form %}

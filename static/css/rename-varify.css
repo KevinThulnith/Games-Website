@@ -1,0 +1,40 @@
+:root {
+  --color2: rgb(93, 0, 243);
+}
+.status .one {
+  background: var(--color2);
+}
+.status .one:after {
+  background: var(--color2);
+}
+.status .two {
+  background: var(--color2);
+}
+form {
+  text-align: center;
+}
+form p {
+  font-size: 1.23rem;
+  color: #645e8b;
+  font-weight: 498;
+}
+form input {
+  margin: 0 auto;
+  height: 2.5rem;
+  display: block;
+  background: none;
+  outline: none;
+  border: 0.19rem solid #6161cc;
+  border-radius: 0.8rem;
+  width: 8rem;
+  font-size: 1.45rem;
+  text-align: center;
+}
+form button {
+  margin-top: 0.8rem;
+  width: 90%;
+  margin-bottom: -0.1rem;
+}
+.hide {
+  visibility: hidden;
+}

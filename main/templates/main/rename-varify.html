@@ -1,0 +1,43 @@
+{% extends 'main/rename-base.html' %}
+{% block form %}
+  <h1>Varification</h1>
+  <p>
+    We have send an 6 character varififcation code to your email. <br />
+    {{value2.dsply}}
+  </p>
+  <input
+    type="text"
+    value="{{value}}"
+    style="display: none"
+    name="value"
+    id="status"
+  />
+  <input type="text" value="{{value2.id}}" style="display: none" name="value2" />
+  <input
+    value="{{inpt}}"
+    name="varfc"
+    placeholder="000000"
+    maxlength="6"
+    pattern="[0-9]{6}"
+    title="only numbers (6 characters)"
+    id="inpt"
+    required
+  />
+  <span class="hide">Wrong code try again</span>
+  <button type="submit">Submit</button>
+  <script>
+    let spn = document.querySelector("span");
+    let sts = document.getElementById("status");
+    let inpt = document.getElementById("inpt");
+    if (eval(sts.value) == 1) {
+      spn.classList.remove("hide");
+      let up = 0;
+      inpt.addEventListener("input", () => {
+        up++;
+        if (up > 1) {
+          spn.classList.add("hide");
+        }
+      });
+    }
+  </script>
+{% endblock form %}

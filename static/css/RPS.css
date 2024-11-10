@@ -1,0 +1,221 @@
+body {
+  min-width: 115vh;
+  background: linear-gradient(64deg, #353593, lightblue);
+}
+.pop {
+  display: none;
+}
+
+img {
+  height: 110px;
+}
+:root {
+  --height: 560px;
+  --width: 560px;
+}
+#wndw4,
+#wndw3,
+.wndw2,
+.wndw1,
+.box {
+  height: var(--height);
+  width: var(--width);
+}
+.box {
+  background: #b6d6d2;
+  border-radius: 40px;
+  scroll-behavior: smooth;
+  box-shadow: 4px 4px 4px rgba(20, 17, 17, 0.47),
+    -4px -4px 4px rgba(78, 70, 180, 0.49);
+  position: relative;
+  overflow: hidden;
+}
+.box::-webkit-scrollbar {
+  width: 0px;
+}
+.box .wndw1 {
+  text-align: center;
+}
+.box .wndw1 h1 {
+  color: #335f72;
+  font-weight: 470;
+  font-size: 30px;
+  text-align: left;
+  margin-left: 30px;
+}
+.box .wndw1 .high {
+  box-shadow: 4px 4px 6px rgba(253, 10, 10, 0.397);
+  text-shadow: inset 2px 2px 4px rgba(253, 10, 10, 0.397);
+}
+.box .wndw1 button {
+  height: 65px;
+  width: 250px;
+  border: 2.5px solid #4c1de6;
+  font-size: 34px;
+  background: #7f16db;
+  color: #b6d6d2;
+  border-radius: 20px;
+  margin: 30px 10px 40px 10px;
+}
+.box .wndw2 {
+  position: relative;
+}
+.box .wndw2 .pad1,
+.box .wndw2 .pad {
+  display: flex;
+  justify-content: space-between;
+  height: 144px;
+}
+.box .wndw2 .pad {
+  margin: 0 50px;
+  padding-top: 15px;
+  padding-bottom: 6px;
+}
+.box .wndw2 .pad1 {
+  margin: 0 124px;
+  margin-bottom: -23px;
+}
+.box .wndw2 .pad1 .wid,
+.box .wndw2 .pad .icon {
+  height: 124px;
+  aspect-ratio: 1;
+  border: 3px solid;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.box .wndw2 .pad .icon {
+  border-color: blue;
+  cursor: pointer;
+}
+.box .wndw2 .pad .icon:last-child {
+  transform: rotateY(180deg);
+}
+.box .wndw2 .pad1 .wid {
+  border-color: #743f9b;
+}
+.box .wndw2 .score h3 {
+  font-size: 30px;
+  margin-left: 30px;
+  font-weight: 500;
+  color: #6714ed;
+}
+.box .wndw2 .board {
+  display: inline-block;
+  height: 100px;
+  color: #143640;
+  font-size: 25px;
+  width: 45%;
+  margin: 1px 12.7px;
+  text-align: center;
+  background: linear-gradient(60deg, #8a8acb, gold);
+  border-radius: 30px;
+  padding-top: 24px;
+  margin-top: -20px;
+}
+.box .wndw2 .score .scr:after {
+  position: absolute;
+  content: "";
+  background: linear-gradient(120deg, #3b1ac4, rgb(111, 169, 180));
+  height: 15px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  transform: translate(-70px, -56px);
+}
+.box .wndw2 .board span {
+  display: block;
+}
+.box .wndw2 .dot {
+  height: 16px;
+  width: 16px;
+  background: blue;
+  position: absolute;
+  top: 0.4rem;
+  right: 1.1rem;
+  border-radius: 50%;
+}
+.box .wndw2 .dot:hover {
+  background: #5a0fd1;
+}
+.box .wndw2 label {
+  color: #350ac6;
+  font-size: 22px;
+  display: flex;
+  margin: 7px 0px 0px 40px;
+}
+.box .wndw2 label div {
+  color: #ff0000;
+  min-width: 25px;
+  text-align: right;
+}
+.box #wndw3 {
+  position: absolute;
+  transform: translate(0, -92%);
+  text-align: center;
+  padding-top: 73px;
+  background: rgba(75, 40, 221, 0.26);
+}
+.box #wndw3 .Ywn,
+.box #wndw3 .Yls,
+.box #wndw3 .Ytg {
+  padding: 2rem 0;
+  width: 24rem;
+  margin: 10px auto;
+  font-size: 4.3rem;
+  border-radius: 1.5rem;
+  color: aliceblue;
+  pointer-events: none;
+}
+.box #wndw3 .Ywn {
+  background: linear-gradient(50deg, #1a1af4, #b6dea7);
+}
+.box #wndw3 .Yls {
+  background: linear-gradient(50deg, #db1111, #d17d97);
+}
+.box #wndw3 .Ytg {
+  background: linear-gradient(50deg, #ababe2, #3ce000);
+}
+.box #wndw3 button {
+  width: 60%;
+  height: 72px;
+  border: 0px;
+  background: #a4d6d0;
+  border-radius: 25px;
+  font-size: 30px;
+  font-style: oblique;
+  color: #5800ff;
+  cursor: pointer;
+  margin: 22px 0px 6px 0px;
+  box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.42);
+  font-weight: 500;
+}
+.box #wndw4 {
+  height: 560px;
+  width: 600px;
+  position: absolute;
+  transform: translate(0, -104%);
+  background: rgba(104, 95, 208, 0.29);
+}
+.box #wndw4 .plyra,
+.box #wndw4 .plyrb,
+.box #wndw4 .plyrt {
+  width: 300px;
+  margin: 340px 70px 0px 150px;
+  font-size: 40px;
+  color: aliceblue;
+  text-align: center;
+  border-radius: 20px;
+  padding: 28px 0px;
+  cursor: pointer;
+  pointer-events: none;
+}
+.box #wndw4 .plyra {
+  background: linear-gradient(80deg, #7d1ad3, #217ce6);
+}
+.box #wndw4 .plyrb {
+  background: linear-gradient(80deg, #dbdfed, #0e5dc7);
+}
+.box #wndw4 .plyrt {
+  background: linear-gradient(80deg, #0add83, #cb9b1b);
+}

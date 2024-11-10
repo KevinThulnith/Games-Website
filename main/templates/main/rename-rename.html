@@ -1,0 +1,65 @@
+{% extends 'main/rename-base.html' %}
+{% load static %}
+{% block form %}
+  <div class="input">
+    <input
+      id="inpt"
+      type="text"
+      name="uname"
+      placeholder="  "
+      value="{{value}}"
+      required
+    />
+    <label for="uname">Username</label>
+    <span id="label" class="hide">Wrong Username</span>
+    <script>
+      let input = document.getElementById("inpt");
+      let label = document.getElementById("label");
+      if (input.value.length) {
+        label.classList.remove("hide");
+        let ys = 0;
+        input.addEventListener("input", () => {
+          ys++;
+          if (ys > 2) {
+            label.classList.add("hide");
+          }
+        });
+      }
+    </script>
+  </div>
+  <div class="input">
+    <input
+      placeholder=" "
+      type="password"
+      name="pas1"
+      id="pas1"
+      pattern="[A-Za-z\0-9\@\_\$\%]{8,20}"
+      title="Password must contain 8 or more characters"
+      value="{{value2}}"
+      required
+    />
+    <label for="pas1">New Password</label>
+    <button id="bt1" type="button">
+      <img src=" {% static '/graphics/eye-solid.svg' %} " />
+      <img src=" {% static '/graphics/eye-low-vision-solid.svg' %} " />
+    </button>
+  </div>
+  <div class="input">
+    <input
+      placeholder=" "
+      type="password"
+      name="pas2"
+      id="pas2"
+      value="{{value2}}"
+      required
+    />
+    <label for="pas2">Confirm Password</label>
+    <button id="bt2" type="button">
+      <img src=" {% static '/graphics/eye-solid.svg' %} " />
+      <img src=" {% static '/graphics/eye-low-vision-solid.svg' %} " />
+    </button>
+    <span class="hide" id="banr">Wrong Password</span>
+  </div>
+  <button type="submit" id="ok">Submit</button>
+  <script src=" {% static '/js/chkpass.js' %} "></script>
+{% endblock form %}

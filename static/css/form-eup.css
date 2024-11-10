@@ -1,0 +1,30 @@
+.status .one {
+  background: var(--color2);
+}
+.status .one:after {
+  background: var(--color2);
+}
+.status .two {
+  background: var(--color2);
+}
+form .input button {
+  max-height: 2rem;
+  max-width: 2.5rem;
+  position: absolute;
+  background: transparent;
+  overflow: hidden;
+  transform: translate(16.8rem, -3.6rem);
+}
+form .input button img {
+  height: 1.6rem;
+}
+form .input button img[src=" /static/graphics/eye-solid.svg "] {
+  margin-left: 0.1rem;
+}
+form .input {
+  margin: 1.7rem 0;
+}
+form button[type="submit"],
+form button[type="reset"] {
+  margin: 0.1rem 0.432rem 0.6rem 0.432rem;
+}

@@ -1,0 +1,47 @@
+{% extends "games/base-game.html" %}
+{% load static %}
+{% block stsh %}
+  <link rel="stylesheet" href="{% static '/css/GTN.css' %}" />
+{% endblock stsh %}
+{% block cont %}
+  <div class="container">
+    <div class="window1">
+      <h1>Select Range</h1>
+      <button>25</button>
+      <button>50</button>
+      <button>75</button>
+      <button>100</button>
+    </div>
+    <div class="window2">
+      <h2>Guess The Number</h2>
+      <div class="dot" onclick="fast()"></div>
+      <div class="pad"></div>
+      <span>
+        Lives :
+        <header id="lives"></header>
+      </span>
+    </div>
+    <div class="window3 pop">
+      <header class="winner pop">+10 Points</header>
+      <header class="lose pop">You Loose !</header>
+      <div class="loost">
+        <button onclick="GoToMenu()">Main Menu</button>
+        <button onclick="Restart()">Restart</button>
+      </div>
+      <div class="wnst pop">
+        <form action="/game/Guess The Number/" method="post">
+          {% csrf_token %}
+          <input type="hidden" name="score" id="scr1" value="" />
+          <button type="submit">Main Menu</button>
+        </form>
+        <form action="/game/Guess The Number/" method="post">
+          {% csrf_token %}
+          <input type="hidden" name="score" id="scr2" value="" />
+          <button type="submit">Restart</button>
+        </form>
+      </div>
+    </div>
+    <script src=" {% static '/js/GTN-makepad.js' %} "></script>
+    <script src=" {% static '/js/GTN-game.js' %} "></script>
+  </div>
+{% endblock cont %}

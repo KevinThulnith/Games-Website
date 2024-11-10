@@ -1,0 +1,14 @@
+{% extends "games/base.html" %}
+{% load static %}
+{% block links %}
+  <link rel="stylesheet" href="{% static '/css/base-game.css' %}" />
+  {% block stsh %}
+  {% endblock stsh %}
+{% endblock links %}
+{% block content %}
+  <a href=" {% url 'home' %} " id="btt">
+    <img src=" {% static '/graphics/logo (9).png' %} " />
+  </a>
+  <input type="hidden" id="status" value="{{status}}" />
+  {% block cont %} {% endblock cont %} 
+{% endblock content %}

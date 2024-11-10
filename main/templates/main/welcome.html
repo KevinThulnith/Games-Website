@@ -1,0 +1,28 @@
+{% extends "main/main.html" %} {% load static %} {% block links %}
+<link rel="stylesheet" href=" {% static '/css/welcome.css' %} " />
+{% endblock links %} {% block content %}
+<nav>
+  <img src="{% static '/graphics/favicon.png' %}" />
+  <h3>Sarents Gaming</h3>
+</nav>
+<div class="content">
+  <div class="box1">
+    <h1>Sarents Games</h1>
+    <p>
+      A series of games to relax have fun.<br />
+      None compatitive games wi th simple mechanisms for all ages all around the
+      world. <br />We will need your help to make games more awesome.
+    </p>
+    <div class="links">
+      <button><a href=" {% url 'login' %} ">Log in</a></button>
+      <button><a href=" {% url 'singin' %} ">Sing in</a></button>
+    </div>
+  </div>
+  <div class="box2">
+    <div class="fun">Fun</div>
+    <div class="simple">Simple</div>
+    <div class="relax">Relaxing</div>
+    <div class="calming">Calming</div>
+  </div>
+</div>
+{% endblock content %}

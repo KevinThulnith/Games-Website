@@ -1,0 +1,90 @@
+{% extends "games/base.html" %}
+{% load static %}
+{% block links %}
+  <link rel="stylesheet" href="{% static '/css/home.css' %}" />
+{% endblock links %}
+{% block content %}
+  <style>
+    nav ul li .image .pic {
+      background-image: url("{{user.profilePic.url}}");
+    }
+  </style>
+  <nav>
+    <img src="{% static '/graphics/favicon.png' %}" id="logo" />
+    <h3>Sarents Gaming</h3>
+    <ul>
+      <li><a href=" {% url 'home' %} ">Games</a></li>
+      <li><a href="#">About Us</a></li>
+      <li><a href=" {% url 'slides' %} ">News</a></li>
+      <li>
+        <div class="image" id="prfl">
+          <div class="pic"></div>
+        </div>
+      </li>
+    </ul>
+    <ol class="pop">
+      <li><h4>Hi,{{user.name}}</h4></li>
+      <li><a href=" {% url 'profile' %} " class="lc">Profile</a></li>
+      <li><a href=" {% url 'logout' %} " class="lc">Logout</a></li>
+    </ol>
+  </nav>
+  <h1>Score Board</h1>
+  <div class="tables" id="table">
+    <ol class="rows">
+      {% for n in game1 %}
+      <li class="row">
+        <div class="name">{{n.player}}</div>
+        <div class="score">{{n.score}}</div>
+      </li>
+      {% endfor %}
+    </ol>
+    <ol class="rows">
+      {% for n in game2 %}
+      <li class="row">
+        <div class="name">{{n.player}}</div>
+        <div class="score">{{n.score}}</div>
+      </li>
+      {% endfor %}
+    </ol>
+    <ol class="rows">
+      {% for n in game3 %}
+      <li class="row">
+        <div class="name">{{n.player}}</div>
+        <div class="score">{{n.score}}</div>
+      </li>
+      {% endfor %}
+    </ol>
+    <ol class="rows">
+      {% for n in game4 %}
+      <li class="row">
+        <div class="name">{{n.player}}</div>
+        <div class="score">{{n.score}}</div>
+      </li>
+      {% endfor %}
+    </ol>
+  </div>
+  <div class="links">
+    <button id="lt">&lt</button>
+    <div class="names" id="mygames">
+      {% for n in games %}
+      <div class="name1">{{n}}</div>
+      {% endfor %}
+    </div>
+    <button id="gt">&gt</button>
+  </div>
+  <div class="games">
+    <div class="box1">
+      <a class="tik-tak-toe" href=" {% url 'nmbr' 'Tik Tak To' %} ">Tik Tak To</a>
+      <a class="guess-the-number" href="{% url 'nmbr' 'Guess The Number' %}">
+        Guess The Number
+      </a>
+    </div>
+    <div class="box2">
+      <a class="rock-paper-scissor" href="{% url 'nmbr' 'Rock Paper Scissor' %}">
+        Rock Paper Scissor
+      </a>
+      <a class="hang-man" href="{% url 'nmbr' 'Hang Man' %}">Hang Man</a>
+    </div>
+  </div>
+  <script src=" {% static '/js/home.js' %} "></script>
+{% endblock content %}

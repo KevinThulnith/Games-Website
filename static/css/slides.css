@@ -1,0 +1,134 @@
+body {
+  box-sizing: border-box;
+  justify-content: center;
+  background: linear-gradient(
+    150deg,
+    rgb(229, 231, 244),
+    hsl(216, 21%, 70%),
+    #a1a1c4
+  );
+  height: 100vh;
+  overflow: hidden;
+}
+.block {
+  text-align: center;
+}
+.block h1 {
+  font-size: 3.07rem;
+  font-weight: 420;
+  color: #4d22db;
+  margin-top: -20px;
+}
+.block hr {
+  width: 40%;
+  height: 4px;
+  border: none;
+  border-radius: 10px;
+  background: #3c0cc0;
+  margin: -25px 30% 11px 30%;
+}
+.block #p2 {
+  margin-top: 22px;
+}
+.block #p2 button:first-child {
+  margin-right: -13px;
+}
+.block #p2 button {
+  width: 50px;
+  height: 30px;
+  border: none;
+  font-size: 33px;
+  cursor: pointer;
+  background: none;
+  margin-top: -100px;
+  color: rgb(64, 80, 109);
+}
+.block #p2 button:active {
+  color: aliceblue;
+}
+.block #p2 a {
+  margin: 0 20px 30px 20px;
+}
+a::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  transition: all 0.1s;
+  background: #540f90;
+  border: 2px solid transparent;
+}
+a:hover::after {
+  border-color: #e53d9e;
+}
+.box {
+  background: #fff4f4;
+  width: 800px;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  scroll-behavior: smooth;
+  column-gap: 24px;
+  padding: 10px 0px;
+  box-shadow: 4px 4px 3px rgba(71, 36, 88, 0.57),
+    -4px -4px 3px rgb(181, 190, 227);
+}
+img {
+  height: 450px;
+  border-radius: 20px;
+  box-shadow: 3px 3px 2px rgba(14, 13, 54, 0.24);
+}
+.content {
+  min-width: 770px;
+  display: flex;
+  padding: 10px 20px;
+  margin: 10px 0;
+  scroll-behavior: smooth;
+}
+.content:first-child {
+  margin-left: 0;
+}
+.content:last-child {
+  margin-right: 0;
+}
+.info {
+  height: 420px;
+  padding: 10px 0 10px 24px;
+  display: grid;
+  align-content: center;
+}
+.info h2 {
+  color: #de2424;
+  font-size: 36px;
+  font-weight: 540;
+  margin-bottom: 25px;
+}
+.info p {
+  text-align: justify;
+  color: #442a4e;
+  font-size: 18px;
+  font-weight: 500;
+}
+.ear::after {
+  border: 2px solid rgb(235, 201, 201);
+}
+.cats {
+  height: 100px;
+  width: 40px;
+  position: absolute;
+}
+#btt img {
+  background: #a7a7c6;
+  height: 3rem;
+  border-radius: 50%;
+  padding: 0.5rem;
+}
+#btt {
+  position: absolute;
+  left: 1.8rem;
+  top: 1.8rem;
+}
+a[href=' /home/ ']::after{
+  display: none;
+}

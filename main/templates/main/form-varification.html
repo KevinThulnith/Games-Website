@@ -1,0 +1,44 @@
+{% extends 'main/form-base.html' %}
+{% block form %}
+  <h1>Varification</h1>
+  <p>
+    We have send an 6 character varififcation code to your email. <br />
+    {{val1.dsply}}
+  </p>
+  <input
+    type="text"
+    id="status"
+    value="{{val1.id}}"
+    name="sand"
+    style="display: none"
+  />
+  <div class="input">
+    <input
+      value="{{val2}}"
+      name="varfc"
+      placeholder="000000"
+      maxlength="6"
+      pattern="[a-z0-9]{6}"
+      title="only numbers and simple letters"
+      id="mobile"
+      style="width: 8rem; text-indent: 0rem"
+      required
+    />
+    <span class="hide">Wrong code try again</span>
+  </div>
+  <button type="submit">Submit</button>
+  <script>
+    let input = document.getElementById("mobile");
+    let label = document.querySelector("span");
+    if (input.value.length) {
+      label.classList.remove("hide");
+      let ys = 0;
+      input.addEventListener("input", () => {
+        ys++;
+        if (ys > 2) {
+          label.classList.add("hide");
+        }
+      });
+    }
+  </script>
+{% endblock form %}

@@ -1,0 +1,78 @@
+{% extends "games/base.html" %}
+{% load static %}
+{% block links %}
+  <link rel="stylesheet" href="{% static '/css/profile.css' %}" />
+  <link rel="stylesheet" href="{% static '/css/base-game.css' %}" />
+{% endblock links %}
+{% block content %}
+  <a href=" {% url 'home' %} " id="btt">
+    <img src=" {% static '/graphics/logo (9).png' %} " />
+  </a>
+  <style>
+    form .item-0 .image {
+      background-image: url("{{user.profilePic.url}}");
+    }
+  </style>
+  <form action="/profile/" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="item-0">
+      <div class="frame"></div>
+      <div class="image"></div>
+      <h1>{{user.name}}</h1>
+      <label for="image_input"></label>
+    </div>
+    <div class="item-1">
+      <div class="input">
+        <input
+          type="text"
+          name="name"
+          id="name"
+          value="{{user.name}}"
+          placeholder="  "
+          required
+        />
+        <label for="name">Name</label>
+      </div>
+      <div class="input">
+        <input
+          type="tel"
+          id="mobile"
+          name="mobile"
+          maxlength="11"
+          placeholder="   "
+          value="{{user.mobile}}"
+          pattern="[0-9]{9,10}"
+          title="9 to 10 numbers"
+          required
+        />
+        <label for="mobile" id="lbl">Mobile</label>
+      </div>
+      <div class="input">
+        <input type="date" name="dob" id="dob" value="{{dob}}" required />
+        <label for="{{dob}}">Birth Day</label>
+      </div>
+      <input
+        type="file"
+        id="image_input"
+        name="profilePic"
+        accept="image/png, image/jpg"
+      />
+      <button type="submit" id="sub">Submit</button>
+    </div>
+    <div class="item-2">
+      {% if game1 %}
+      <ul>
+        {% for n in game1 %}
+        <li>
+          <div class="name">{{n.game}}</div>
+          <div class="score">{{n.score}}</div>
+        </li>
+        {% endfor %}
+      </ul>
+      {% else %}
+      <h5 id="mybnr">No games played yet</h5>
+      {% endif %}
+    </div>
+  </form>
+  <script src=" {% static '/js/upload.js' %} "></script>
+{% endblock content %}

@@ -1,0 +1,50 @@
+{% extends "games/base-game.html" %}
+{% load static %}
+{% block stsh %}
+  <link rel="stylesheet" href="{% static '/css/HM.css' %}" />
+{% endblock stsh %}
+{% block cont %}
+  <div class="container">
+    <nav></nav>
+    <div id="wndw1">
+      <h2>Select Mode :</h2>
+      <button id="1">Easy</button>
+      <button id="2">Medium</button>
+      <button id="3">Hard</button>
+    </div>
+    <div id="wndw2">
+      <header>Hang Man</header>
+      <div class="man"></div>
+      <div class="word"></div>
+      <div class="keybord"></div>
+      <div class="banner">
+        Lives left :
+        <span>7</span>
+      </div>
+      <div class="dot"></div>
+    </div>
+    <div id="wndw3" class="pop">
+      <header class="wnn pop">Winner !</header>
+      <header class="lss pop">You Lose !</header>
+      <div class="loost">
+        <button id="menu">Menu</button>
+        <button id="restart">Restrart</button>
+      </div>
+      <div class="wnst pop">
+        <form action="/game/Hang Man/" method="post">
+          {% csrf_token %}
+          <input type="hidden" name="score" id="scr1" value="" />
+          <button type="submit">Menu</button>
+        </form>
+        <form action="/game/Hang Man/" method="post">
+          {% csrf_token %}
+          <input type="hidden" name="score" id="scr2" value="" />
+          <button type="submit">Restart</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script type="module" src=" {% static '/js/HM-words.js' %} "></script>
+  <script type="module" src=" {% static '/js/HM-view.js' %} "></script>
+  <script type="module" src=" {% static '/js/HM-game.js' %} "></script>
+{% endblock cont %}

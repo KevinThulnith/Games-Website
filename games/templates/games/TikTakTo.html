@@ -1,0 +1,48 @@
+{% extends "games/base-game.html" %}
+{% load static %}
+{% block stsh %}
+  <link rel="stylesheet" href="{% static '/css/TTT.css' %}" />
+{% endblock stsh %}
+{% block cont %}
+  <div class="box">
+    <div class="wndw1" id="w1">
+      <h2>Select Player</h2>
+      <button id="p1">
+        <img src=" {% static '/graphics/logo1.png' %}" />
+        <span>Player 1</span>
+      </button>
+      <button id="p2">
+        <img src="{% static '/graphics/logo3.png' %}" />
+        <span>Player 2</span>
+      </button>
+    </div>
+    <div class="wndw center" id="w2">
+      <h4>Tik Tak To</h4>
+      <div class="pad"></div>
+      <div class="pause" onclick="wlt()"></div>
+    </div>
+    <div class="wndw2 pop" id="w3">
+      <header class="win hide" id="h1">+10 Points</header>
+      <header class="loose hide" id="h2">You Lost!</header>
+      <header class="tie hide" id="h3">Tie Game!</header>
+      <div class="btts">
+        <button onclick="restart()">Restart</button>
+        <button onclick="menu()">Menu</button>
+      </div>
+      <div class="forms pop">
+        <form action="/game/Tik Tak To/" method="post">
+          {% csrf_token %}
+          <input type="hidden" name="score" id="score1" value="" />
+          <button type="submit">Restart</button>
+        </form>
+        <form action="/game/Tik Tak To/" method="post">
+          {% csrf_token %}
+          <input type="hidden" name="score" id="score2" value="" />
+          <button type="submit">Menu</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src=" {% static '/js/TTT-makepad.js' %} "></script>
+  <script src=" {% static '/js/TTT-game.js' %} "></script>
+{% endblock cont %}
