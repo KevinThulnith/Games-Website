@@ -9,6 +9,7 @@
 <li>OTP sending</li>
 <li>User verification</li>
 <li>Edit profile</li>
+<li>Veiw and edit profile picture</li>
 </ul>
 
 <h1>Games</h1>
